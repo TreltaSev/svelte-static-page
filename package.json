@@ -41,6 +41,7 @@
 		"@tailwindcss/cli": "^4.0.6",
 		"@tailwindcss/vite": "^4.0.6",
 		"svelte-portal": "^2.2.1",
+		"sveltekit-static-page": "file:",
 		"tailwind-merge": "^3.0.1"
 	}
 }
