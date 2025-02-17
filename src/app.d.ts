@@ -1,6 +1,7 @@
 import 'unplugin-icons/types/svelte'
 
-// See https://svelte.dev/docs/kit/types#app.d.ts
+/* eslint-disable @typescript-eslint/no-unused-vars */
+// See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
 declare global {
 	namespace App {
@@ -9,6 +10,12 @@ declare global {
 		// interface PageData {}
 		// interface PageState {}
 		// interface Platform {}
+	}
+
+	namespace svelteHTML {
+		interface HTMLAttributes<T> {
+			'on:outclick'?: (event: CustomEvent) => void
+		}
 	}
 }
 

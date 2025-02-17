@@ -7,6 +7,7 @@
 	import type { ClassValue } from 'clsx';
 	import { getContext, setContext } from 'svelte';
 	import { type ToggleableWritable } from '@lib/internal';
+	import { directives } from '@lib/internal/directives';
 
 	// -=-=-=-=- Get Contexts -=-=-=-=- //
 	let parentActive$: ToggleableWritable | undefined = getContext('parentActive$');
@@ -43,6 +44,12 @@
 			}
 		});
 	}
+
+	function onoutclick(event: CustomEvent) {
+		if ($parentActive$) {
+			parentActive$?.toggle(false);
+		}
+	}
 </script>
 
 <div bind:this={anchor} class={cn('relative', anchorClass)}>
@@ -54,6 +61,8 @@
 <div
 	bind:this={menu}
 	use:portal={anchor}
+	use:directives
+	on:outclick={onoutclick}
 	class={cn(
 		'w-fit h-fit absolute z-0',
 		...menu_class,
