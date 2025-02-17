@@ -46,3 +46,5 @@
 	--color-primary-900: #0d1c2d;
 	--color-primary-950: #071626;
 }
+
+@custom-variant dark (&:where(.dark, .dark *));

@@ -1,4 +1,6 @@
 
+default:
+    bun run dev
 
 # Initialize this project with a package manager
 setup PACKAGE_MANAGER='bun':
